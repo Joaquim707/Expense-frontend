@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Use environment variable for flexibility
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api",
+  baseURL: "https://expense-backend-whoi.onrender.com/api" || "http://localhost:5000/api",
   timeout: 10000, // allow for Render cold starts
 });
 
