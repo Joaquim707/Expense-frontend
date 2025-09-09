@@ -1,11 +1,21 @@
-import axios from 'axios';
+import axios from "axios";
 
+// Use environment variable for flexibility
 const API = axios.create({
-  baseURL: 'https://expense-backend-lob3.onrender.com/',
-  timeout: 5000
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api",
+  timeout: 10000, // allow for Render cold starts
 });
 
-export const getExpenses = (params) => API.get('/expenses', { params }).then(res => res.data);
-export const createExpense = (payload) => API.post('/expenses', payload).then(res => res.data);
-export const updateExpense = (id, payload) => API.put(`/expenses/${id}`, payload).then(res => res.data);
-export const deleteExpense = (id) => API.delete(`/expenses/${id}`).then(res => res.data);
+// Interceptor for logging / handling errors
+API.interceptors.response.use(
+  (response) => response.data,
+  (error) => {
+    console.error("API Error:", error.response?.data || error.message);
+    return Promise.reject(error);
+  }
+);
+
+export const getExpenses = (params) => API.get("/expenses", { params });
+export const createExpense = (payload) => API.post("/expenses", payload);
+export const updateExpense = (id, payload) => API.put(`/expenses/${id}`, payload);
+export const deleteExpense = (id) => API.delete(`/expenses/${id}`);
