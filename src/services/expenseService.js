@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Use environment variable for flexibility
 const API = axios.create({
-  baseURL: "https://expense-backend-production-3190.up.railway.app/" || "http://localhost:5000/api",
+  baseURL: "https://expense-backend-production-3190.up.railway.app/api" || "http://localhost:5000/api",
   timeout: 10000, // allow for Render cold starts
 });
 
