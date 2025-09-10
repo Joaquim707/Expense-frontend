@@ -96,6 +96,7 @@ export default function ExpenseForm({ onSubmit, onCancel, defaultValues }) {
       <input
         name="date"
         type="date"
+        placeholder="DD-MM-YYY"
         value={form.date}
         onChange={handleChange}
         style={inputStyle}
