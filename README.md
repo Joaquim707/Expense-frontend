@@ -48,6 +48,6 @@ Built with **MongoDB, Express, React, and Node.js**.
 
 <h2>🌐 Live Demo</h2>
 
-👉 [[Click here to view live app](https://your-expense-tracker-frontend.vercel.app/)](https://expense-frontend-drab-gamma.vercel.app/)
+👉 [[Click here to view live app]](https://expense-frontend-drab-gamma.vercel.app/)
 
-Backend API: [(https://your-expense-tracker-backend.onrender.com)](https://expense-backend-3t8m.onrender.com/)
+Backend API: (https://expense-backend-3t8m.onrender.com/)
